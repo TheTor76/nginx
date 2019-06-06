@@ -7,8 +7,9 @@
 # Pull base image.
 FROM ubuntu:18.04
 
-RUN \
-  apt-get -y install software-properties-common
+RUN apt-get update && apt-get -y upgrade
+
+RUN apt-get -y install software-properties-common
 # Install Nginx.
 RUN \
   add-apt-repository -y ppa:nginx/stable && \
